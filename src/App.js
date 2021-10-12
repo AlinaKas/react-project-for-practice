@@ -2,6 +2,7 @@ import './App.css';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import React, { Component } from 'react';
 import Modal from './components/Modal';
+import Clock from './components/Clock';
 
 class App extends Component {
   state = {
@@ -16,7 +17,7 @@ class App extends Component {
     const { showModal } = this.state;
     return (
       <>
-        <button type="button" onClick={this.toggleModal}>
+        {/* <button type="button" onClick={this.toggleModal}>
           Modal open
         </button>
         {showModal && (
@@ -27,7 +28,12 @@ class App extends Component {
               Close
             </button>
           </Modal>
-        )}
+        )} */}
+
+        {showModal && <Clock />}
+        <button type="button" onClick={this.toggleModal}>
+          Таймер
+        </button>
       </>
     );
   }
